@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: world-api-demo
+   labels:
+      app: world-api
+      ver: '1'
+spec:
+   containers:
+   -  env:
+      -  name: PROFILE
+         value: DEV
+      name: world-demo-api
+      image: arockiaanto/world-demo-api:latest
+      port:
+         containerPort: 5000
+   restartPolicy: Never 
+        
